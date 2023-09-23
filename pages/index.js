@@ -53,15 +53,15 @@ const Home = ({ frontmatter }) => {
               Founded in 2022 as a company specializing in 3PL services, VJ Supply Chain has emerged as a prominent logistics solutions provider in Canada with a strong customer-centric approach. We excel at simplifying, quantifying, qualifying, and detailing the intricate logistics involved in transporting cargo from point A to point B.
             </p>
           </div>
-          <div className="container">
-            <div className="flex flex-row mt-5 justify-between items-center">
-              <div className="w-1/2 mx-auto">
+          <div className="container section">
+            <div className="flex md:flex-row flex-col mt-5 justify-between items-center">
+              <div className="w-full md:w-1/2 mx-auto">
                 <h2 className="font-bold leading-[40px]">Vision & Strategy</h2>
                 <p className="mt-5">
                   At VJ Supply Chain, our vision is to pioneer innovative and sustainable logistics solutions. Our strategy revolves around leveraging technology and global supply chain expertise for seamless and cost-effective services. We&apos;re dedicated to optimizing operations, reducing environmental impact, and exceeding client expectations through strategic excellence.
                 </p>
               </div>
-              <div className="w-1/2">
+              <div className="w-full md:w-1/2">
                 <div>
                   <Image
                     className="mx-auto rounded-lg"
