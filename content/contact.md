@@ -3,10 +3,10 @@ title: "Contact Us"
 layout: "contact"
 draft: false
 info: 
-  title: Why you should contact us!
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit recusandae voluptates doloremque veniam temporibus porro culpa ipsa, nisi soluta minima saepe laboriosam debitis nesciunt.
+  title: How can we help
+  description: 
   contacts: 
-    - "phone: +88 125 256 452"
-    - "Mail: [info@bigspring.com](mailto:info@bigspring.com)"
-    - "Address: 360 Main rd, Rio, Brazil"
+    - "Phone: +1 647-760-7739"
+    - "Mail: [arpan@vjsupplychain.com](mailto:arpan@vjsupplychain.com)"
+    - "Address: 10 Markbrook Ln, Toronto, ON M9V 5E3"
 ---

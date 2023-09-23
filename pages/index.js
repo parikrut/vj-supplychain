@@ -32,7 +32,7 @@ const Home = ({ frontmatter }) => {
                 </Link>
               )}
               <Image
-                className="mx-auto mt-12"
+                className="mx-auto mt-12 rounded-lg"
                 src={banner.image}
                 width={750}
                 height={390}
@@ -44,13 +44,83 @@ const Home = ({ frontmatter }) => {
         </div>
       </section>
 
+      {/* About */}
+      <section className="section bg-theme-light">
+        <div className="container">
+          <div className="text-center">
+            <h2>About us</h2>
+            <p className="mt-5 ">
+              Founded in 2022 as a company specializing in 3PL services, VJ Supply Chain has emerged as a prominent logistics solutions provider in Canada with a strong customer-centric approach. We excel at simplifying, quantifying, qualifying, and detailing the intricate logistics involved in transporting cargo from point A to point B.
+            </p>
+          </div>
+          <div className="container">
+            <div className="flex flex-row mt-5 justify-between items-center">
+              <div className="w-1/2 mx-auto">
+                <h2 className="font-bold leading-[40px]">Vision & Strategy</h2>
+                <p className="mt-5">
+                  At VJ Supply Chain, our vision is to pioneer innovative and sustainable logistics solutions. Our strategy revolves around leveraging technology and global supply chain expertise for seamless and cost-effective services. We&apos;re dedicated to optimizing operations, reducing environmental impact, and exceeding client expectations through strategic excellence.
+                </p>
+              </div>
+              <div className="w-1/2">
+                <div>
+                  <Image
+                    className="mx-auto rounded-lg"
+                    src={banner.image}
+                    width={750}
+                    height={390}
+                    alt="banner image"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Why choose us */}
+      <section className="section ">
+        <div className="container">
+          <div className="text-center">
+            <h2>Why choose us</h2>
+            <p className="mt-5 ">
+              Innovative Solutions, Reliability, Cost-Efficiency, Environmental Responsibility, Global Expertise, Customer Satisfaction, Advanced Technology, Customization, Experienced Team, Industry Leadership, Proven Track Record, Partnership Approach, Global Reach, Sustainability Focus.
+            </p>
+          </div>
+          {/* <div className="container">
+            <div className="flex flex-row mt-5 justify-between items-center">
+              <div className="w-1/2 mr-10">
+                <div>
+                  <Image
+                    className="mx-auto rounded-lg"
+                    src={banner.image}
+                    width={750}
+                    height={390}
+                    alt="banner image"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="w-1/2 mx-auto">
+                <h2 className="font-bold leading-[40px]">Vision & Strategy</h2>
+                <p className="mt-5">
+                  At VJ Supply Chain, our vision is to pioneer innovative and sustainable logistics solutions. Our strategy revolves around leveraging technology and global supply chain expertise for seamless and cost-effective services. We're dedicated to optimizing operations, reducing environmental impact, and exceeding client expectations through strategic excellence.
+                </p>
+              </div>
+            </div>
+          </div> */}
+        </div>
+      </section>
+
       {/* Features */}
       <section className="section bg-theme-light">
         <div className="container">
           <div className="text-center">
             <h2>{markdownify(feature.title)}</h2>
+            <p className="mt-5 ">{markdownify(feature.description)}</p>
           </div>
-          <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-2">
             {feature.features.map((item, i) => (
               <div
                 className="feature-card rounded-xl bg-white p-5 pb-8 text-center"
@@ -109,12 +179,20 @@ const Home = ({ frontmatter }) => {
 
                 {/* Content */}
                 <div
-                  className={`service-content mt-5 md:mt-0 ${
-                    !isOdd && "md:order-1"
-                  }`}
+                  className={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"
+                    }`}
                 >
                   <h2 className="font-bold leading-[40px]">{service?.title}</h2>
-                  <p className="mt-4 mb-2">{service?.content}</p>
+                  <ul className="list-disc mt-4 mb-2 ml-5">
+                    <li>Apparel</li>
+                    <li>Automotive</li>
+                    <li>Construction</li>
+                    <li>Consumer Packaged Goods</li>
+                    <li>Healthcare</li>
+                    <li>Manufacturers</li>
+                    <li>Renewable Energy (Wind, Solar, Hydro)</li>
+                    <li>Oil and Gas</li>
+                  </ul>
                   {service.button.enable && (
                     <Link
                       href={service?.button.link}
@@ -138,7 +216,7 @@ const Home = ({ frontmatter }) => {
       })}
 
       {/* workflow */}
-      <section className="section pb-0">
+      {/* <section className="section pb-0">
         <div className="mb-8 text-center">
           {markdownify(
             workflow.title,
@@ -153,10 +231,10 @@ const Home = ({ frontmatter }) => {
           width={1920}
           height={296}
         />
-      </section>
+      </section> */}
 
       {/* Cta */}
-      <Cta cta={call_to_action} />
+      {/* <Cta cta={call_to_action} /> */}
     </Base>
   );
 };
