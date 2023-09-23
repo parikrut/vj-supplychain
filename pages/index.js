@@ -54,7 +54,7 @@ const Home = ({ frontmatter }) => {
             </p>
           </div>
           <div className="container section">
-            <div className="flex md:flex-row flex-col mt-5 justify-between items-center">
+            <div className="flex md:flex-row flex-col justify-between items-center">
               <div className="w-full md:w-1/2 mx-auto">
                 <h2 className="font-bold leading-[40px]">Vision & Strategy</h2>
                 <p className="mt-5">
