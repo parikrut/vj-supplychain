@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "marked": "^4.2.4",

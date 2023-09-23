@@ -1,10 +1,11 @@
 import config from "@config/config.json";
 import { markdownify } from "@lib/utils/textConverter";
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
   const { title, info } = frontmatter;
-  const { contact_form_action } = config.params;
+  const [state, handleSubmit] = useForm("xoqokred");
 
   return (
     <section className="section">
@@ -14,8 +15,7 @@ const Contact = ({ data }) => {
           <div className="col-12 md:col-6 lg:col-7">
             <form
               className="contact-form"
-              method="POST"
-              action={contact_form_action}
+              onSubmit={handleSubmit}
             >
               <div className="mb-3">
                 <input
@@ -23,7 +23,12 @@ const Contact = ({ data }) => {
                   name="name"
                   type="text"
                   placeholder="Name"
-                  required
+                  id="name"
+                />
+                <ValidationError
+                  prefix="name"
+                  field="name"
+                  errors={state.errors}
                 />
               </div>
               <div className="mb-3">
@@ -33,6 +38,12 @@ const Contact = ({ data }) => {
                   type="email"
                   placeholder="Your email"
                   required
+                  id="email"
+                />
+                <ValidationError
+                  prefix="email"
+                  field="email"
+                  errors={state.errors}
                 />
               </div>
               <div className="mb-3">
@@ -41,7 +52,12 @@ const Contact = ({ data }) => {
                   name="subject"
                   type="text"
                   placeholder="Subject"
-                  required
+                  id="subject"
+                />
+                <ValidationError
+                  prefix="subject"
+                  field="subject"
+                  errors={state.errors}
                 />
               </div>
               <div className="mb-3">
@@ -49,12 +65,20 @@ const Contact = ({ data }) => {
                   className="form-textarea w-full rounded-md"
                   rows="7"
                   placeholder="Your message"
+                  id="message"
+                  name="message"
+                />
+                <ValidationError
+                  prefix="message"
+                  field="message"
+                  errors={state.errors}
                 />
               </div>
               <button type="submit" className="btn btn-primary">
                 Send Now
               </button>
             </form>
+            {state.succeeded && <p>Successfully submitted</p>}
           </div>
           <div className="content col-12 md:col-6 lg:col-5">
             {markdownify(info.title, "h4")}
